@@ -16,9 +16,9 @@
 
 package firebase.internal;
 
-import firebase.ApiFuture;
-import firebase.FirebaseApp;
-import firebase.ImplFirebaseTrampolines;
+import firebase.boilerplate.ApiFuture;
+import firebase.boilerplate.FirebaseApp;
+import firebase.boilerplate.ImplFirebaseTrampolines;
 
 
 import java.util.concurrent.Callable;
@@ -42,7 +42,7 @@ public abstract class CallableOperation<T, V extends Exception> implements Calla
    * Run this operation asynchronously on the main thread pool of the specified {@link FirebaseApp}.
    *
    * @param app A non-null {@link FirebaseApp}.
-   * @return An {@code firebase.ApiFuture}.
+   * @return An {@code firebase.boilerplate.ApiFuture}.
    */
   public final ApiFuture<T> callAsync(@NonNull FirebaseApp app) {
     checkNotNull(app);

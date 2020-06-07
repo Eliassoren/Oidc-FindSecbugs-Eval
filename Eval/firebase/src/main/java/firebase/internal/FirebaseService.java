@@ -23,7 +23,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Represents a service exposed from the Admin SDK (e.g. auth, database). Each instance of this
- * class is associated with exactly one instance of firebase.FirebaseApp. Also provides a lifecycle hook
+ * class is associated with exactly one instance of firebase.boilerplate.FirebaseApp. Also provides a lifecycle hook
  * to gracefully tear down the service.
  *
  * @param <T> Type of the service

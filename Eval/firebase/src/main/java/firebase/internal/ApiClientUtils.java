@@ -20,7 +20,7 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.common.collect.ImmutableList;
-import firebase.FirebaseApp;
+import firebase.boilerplate.FirebaseApp;
 
 import java.io.IOException;
 

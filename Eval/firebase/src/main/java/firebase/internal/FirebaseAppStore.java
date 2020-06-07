@@ -17,8 +17,8 @@
 package firebase.internal;
 
 import com.google.common.annotations.VisibleForTesting;
-import firebase.FirebaseApp;
-import firebase.FirebaseOptions;
+import firebase.boilerplate.FirebaseApp;
+import firebase.boilerplate.FirebaseOptions;
 
 
 import java.util.Collections;

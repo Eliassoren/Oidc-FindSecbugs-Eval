@@ -13,9 +13,9 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
-import firebase.FirebaseApp;
-import firebase.FirebaseOptions;
-import firebase.ImplFirebaseTrampolines;
+import firebase.boilerplate.FirebaseApp;
+import firebase.boilerplate.FirebaseOptions;
+import firebase.boilerplate.ImplFirebaseTrampolines;
 import firebase.internal.FirebaseRequestInitializer;
 import firebase.internal.NonNull;
 

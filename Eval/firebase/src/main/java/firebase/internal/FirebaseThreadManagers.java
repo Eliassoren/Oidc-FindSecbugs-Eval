@@ -18,8 +18,8 @@ package firebase.internal;
 
 
 
-import firebase.FirebaseApp;
-import firebase.ThreadManager;
+import firebase.boilerplate.FirebaseApp;
+import firebase.boilerplate.ThreadManager;
 
 
 import java.util.HashSet;
@@ -28,14 +28,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-/** Default firebase.ThreadManager implementations used by the Admin SDK. */
+/** Default firebase.boilerplate.ThreadManager implementations used by the Admin SDK. */
 public class FirebaseThreadManagers {
 
 
   public static final ThreadManager DEFAULT_THREAD_MANAGER = new DefaultThreadManager();
 
   /**
-   * An abstract firebase.ThreadManager implementation that uses the same executor service
+   * An abstract firebase.boilerplate.ThreadManager implementation that uses the same executor service
    * across all active apps. The executor service is initialized when the first app is initialized,
    * and terminated when the last app is deleted. This class is thread safe.
    */

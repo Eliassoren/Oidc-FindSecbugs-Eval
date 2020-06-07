@@ -7,12 +7,19 @@ import com.google.api.client.auth.openidconnect.IdTokenVerifier;
 import com.google.api.client.http.BasicAuthentication;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.gson.JsonObject;
+import com.squareup.okhttp.Request;
+import net.minidev.json.JSONObject;
+import sun.security.util.Cache;
 
+import javax.ws.rs.core.Response;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.security.GeneralSecurityException;
+import java.security.PublicKey;
+import java.time.Instant;
+import java.util.*;
 
 
 /**
@@ -154,11 +161,51 @@ public final class OIDCUtils {
 
         return verifier.verify(idToken);
     }
+    private static Properties config;
+
+    static private Cache<String, Object> cache;
+    static Map<String, Object> providerMetadata;
+    /**
+     * Verifies an ID Token.
+     * TODO: Look into verifying the token issuer as well?
+     */
+    /*public static boolean isValidIdTokenTest(String clientId, String tokenString) throws IOException {
+        if (clientId == null || tokenString == null) {
+            return false;
+        }
+
+        List<String> audiences = Collections.singletonList(clientId);
+
+        IdToken idToken = IdToken.parse(new GsonFactory(), tokenString);
+        PublicKey publicKey = (PublicKey)providerMetadata.get("key"); // fix codeexample
+
+        if(!"nonce".equals(idToken.getPayload().getNonce())) {
+            return false;
+        }
+        try {
+            if(!idToken.verifySignature(publicKey)){
+                return false;
+            }
+        } catch (GeneralSecurityException e) {
+            return false;
+        }
+
+        if(!idToken.verifyAudience(Collections.singleton(config.getProperty("clientId")))) {
+            return false;
+        }
+        if(!idToken.verifyTime(Instant.now().toEpochMilli(), 200)){
+            return false;
+        }
+        if(!idToken.verifyIssuer(String.valueOf(providerMetadata.get("issuer")))) {
+            return false;
+        }
+        return true;
+    }*/
 
     /**
      * Gets user information from the UserInfo endpoint.
      */
-    /*public static JsonObject getUserInfo(String userInfoUrl, String accessToken) throws IOException {
+    public static JsonObject getUserInfo(String userInfoUrl, String accessToken) throws IOException {
         Request request = new Request.Builder()
                 .url(userInfoUrl)
                 .header("Accept", "application/json")
@@ -166,15 +213,17 @@ public final class OIDCUtils {
                 .get()
                 .build();
 
-        Response response = App.httpClient.newCall(request).execute();
+        Response response = Response.ok().build(); //App.httpClient.newCall(request).execute();
 
-        if (response.isSuccessful()) {
-            String jsonString = response.body().string();
-            return new JsonParser().parse(jsonString).getAsJsonObject();
+        if (/*response.isSuccessful()*/response.getEntity().equals(new Object())) {
+            String jsonString = (String)response.getEntity();//response.body().string();
+            JsonObject json =  new JsonObject();
+            json.addProperty("body", jsonString);
+            return json;
+           //JsonParser.parse(jsonString).getAsJsonObject();
         } else {
-            throw new IOException("Could not get user info: " + response.code() + " " +
-                    response.message());
+            throw new IOException("Could not get user info: " + response.getStatus() + " " /*+ response.message()*/);
         }
     }
-*/
+
 }

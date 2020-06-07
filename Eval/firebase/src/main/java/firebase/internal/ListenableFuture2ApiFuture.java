@@ -19,10 +19,10 @@ package firebase.internal;
 
 import com.google.common.util.concurrent.ForwardingListenableFuture.SimpleForwardingListenableFuture;
 import com.google.common.util.concurrent.ListenableFuture;
-import firebase.ApiFuture;
+import firebase.boilerplate.ApiFuture;
 
 /**
- * Adapter from Guava ListenableFuture to GAX firebase.ApiFuture.
+ * Adapter from Guava ListenableFuture to GAX firebase.boilerplate.ApiFuture.
  */
 public class ListenableFuture2ApiFuture<V> extends SimpleForwardingListenableFuture<V> implements
         ApiFuture<V> {

@@ -20,9 +20,9 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.common.collect.ImmutableList;
-import firebase.FirebaseApp;
-import firebase.FirebaseOptions;
-import firebase.ImplFirebaseTrampolines;
+import firebase.boilerplate.FirebaseApp;
+import firebase.boilerplate.FirebaseOptions;
+import firebase.boilerplate.ImplFirebaseTrampolines;
 
 
 import java.io.IOException;

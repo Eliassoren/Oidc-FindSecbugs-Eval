@@ -15,6 +15,9 @@
         <module>zopspace</module>
         <module>firebase</module>
         <module>atricore</module>
+        <module>liferay</module>
+        <module>ddf</module>
+        <module>sonarqube</module>
     </modules>
 
     <dependencies>
