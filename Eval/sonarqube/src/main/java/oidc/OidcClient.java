@@ -1,4 +1,4 @@
-package oidc;/*
+/*
  * OpenID Connect Authentication for SonarQube
  * Copyright (c) 2017 Torsten Juergeleit
  * mailto:torsten AT vaulttec DOT org
@@ -15,6 +15,8 @@ package oidc;/*
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package oidc;
+
 
 import java.io.IOException;
 import java.net.MalformedURLException;

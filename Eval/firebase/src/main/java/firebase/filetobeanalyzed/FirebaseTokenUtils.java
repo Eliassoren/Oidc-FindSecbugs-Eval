@@ -33,7 +33,7 @@ import java.io.IOException;
 
 import static com.google.common.base.Preconditions.checkState;
 
-final class FirebaseTokenUtils {
+public final class FirebaseTokenUtils {
 
   private static final String ID_TOKEN_CERT_URL =
       "https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com";

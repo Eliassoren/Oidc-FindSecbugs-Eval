@@ -11,7 +11,7 @@
 
     <name>Eval</name>
     <modules>
-        <module>findsecbugs-samples-deps</module>
+        <module>dependencies-sample</module>
         <module>zopspace</module>
         <module>firebase</module>
         <module>atricore</module>
